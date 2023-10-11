@@ -11,7 +11,9 @@ include_once("function.php");
     <title>Dynamic navbar</title>
 </head>
 <style>
-
+    a {
+        text-decoration: none;
+    }
 </style>
 <body>
     <nav>

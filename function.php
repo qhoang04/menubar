@@ -19,7 +19,7 @@ function createMenu($parent, $menu)
         foreach ($menu['parents'][$parent] as $itemId) {
             if (!isset($menu['parents'][$itemId])) {
                 $html .= "<li > 
-                         <a  href='" . $menu['items'][$itemId]['link'] . "'>" . $menu['items'][$itemId]['label'] . "</a> 
+                         <a href='" . $menu['items'][$itemId]['link'] . "'>" . $menu['items'][$itemId]['label'] . "</a> 
                      </li>";
             }
             if (isset($menu['parents'][$itemId])) {
