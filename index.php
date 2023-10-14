@@ -1,53 +1,38 @@
-<?php
-include_once("function.php");
-?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dynamic navbar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Multi-level Navbar</title>
 </head>
-<style>
-    a {
-        text-decoration: none;
+<?php 
+  include("connectdb.php");
+
+  function buildMenu($conn, $level = NULL) {
+    $sql = "select * from menu_items";
+    $result = $conn -> query($sql);
+    $menuHTML = "<ul>";
+
+    if ($result -> num_rows > 0) {
+      $menuItems = $result -> fetch_all(MYSQLI_ASSOC);
+      foreach ($menuItems as $menuItem) {
+        if ($menuItem['level'] == $level) {
+          $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '</a>';
+
+          $submenu = buildMenu($conn, $menuItem['id']);
+          if (!empty($submenu)) {
+            $menuHTML .= '<div class="submenu">'. $submenu. '</div>';
+          }
+          $menuHTML .= '</li>';
+        }
+      }
     }
-</style>
+    $menuHTML .= "</ul>";
+    return $menuHTML;
+  }
+?>
 <body>
-    <nav>
-        <div class="container">
-            <div class="">
-                <a href="#">
-                    <h2>
-                        Haha
-                    </h2>
-                    <p>Dynamic Navbar</p>
-                </a>
-            </div>
-            <div>
-                <ul>
-                    <?php echo createMenu(0, $menus); ?>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container" style="padding-top: 20px; padding-bottom:40px;">
-        <div class="row">
-            <div class="col-12 py-4">
-                <h1>Page scroll content</h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent tincidunt dolor eget lorem blandit, auctor
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            </div>
-        </div>
-    </div>
+    hi
 </body>
-
 </html>
