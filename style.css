@@ -1,43 +1,40 @@
 body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-    .navbar {
-      display: flex;
-      flex-direction: column;
-      background-color: #333;
-      color: white;
-      width: 250px;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      padding: 20px;
-    }
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-    }
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
 
-    .navbar a:hover {
-      background-color: #555;
-    }
+.navbar a.active {
+    background-color: #555;
+}
 
-    .submenu {
-      padding-left: 20px;
-      display: none;
-    }
+.submenu {
+    padding-left: 20px;
+    display: none;
+}
 
-    .navbar li:hover .submenu {
-      display: block;
-    }
-
-    /* Nội dung trang web */
-    .content {
-      margin-left: 250px;
-      padding: 20px;
-    }
+.submenu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
