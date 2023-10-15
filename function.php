@@ -10,8 +10,12 @@
       $menuItems = $result -> fetch_all(MYSQLI_ASSOC);
       foreach ($menuItems as $menuItem) {
         if ($menuItem['level'] == $level) {
-          $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '</a>';
-
+          if ($menuItem['more'] === "1") {
+            $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '<i class="moreicon"></i> </a>';
+          }
+          else {
+            $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '</a>';
+          }
           $submenu = buildMenu($conn, $menuItem['id']);
           if (!empty($submenu)) {
             $menuHTML .= '<div class="submenu">'. $submenu. '</div>';
