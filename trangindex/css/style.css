@@ -4,15 +4,17 @@ body {
 }
 .wrapper {
     border: 1px solid #000;
-    height: 700px;
+    height: 950px;
     width: 90%;
     margin: 0 auto;
 }
 .header {
+    background-image: url(../images/dalana-decor-banner-1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
     border: 1px solid red;
-    height: 130px;
+    height: 300px;
     width: 100%;
-    background: #ff0080;
 }
 .menu {
     border: 1px solid #ff80ff;
@@ -20,31 +22,104 @@ body {
     width: 100%;
     background: #00e6ac;
 }
+ul.list_menu {
+    padding: 0;
+    margin: 0;
+    list-style: 0;
+    list-style-type: none;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 27px;
+}
+ul.list_menu li {
+    float: left;
+    margin: 6px;
+    padding: 6px;
+}
+ul.list_menu li:hover {
+    background: #00ff80;
+}
+ul.list_menu li a {
+    text-decoration: none;
+}
 #main {
     border: 1px solid #00ff80;
-    height: 400px;
+    height: auto;
     width: 100%;
 }
 .sidebar {
     border: 1px solid #000066;
-    height: 390px;
+    height: 600px;
     width: 20%;
     margin-top: 5px;
     margin-left: 5px;
     float: left;
 }
+ul.list_sidebar {
+    padding: 0;
+    margin: 0;
+    list-style: 0;
+    list-style-type: none;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 27px;
+}
+ul.list_sidebar li {
+    margin: 6px;
+    padding: 6px;
+}
+ul.list_sidebar li:hover {
+    background: #00ff80;
+}
+ul.list_sidebar li a {
+    text-align: left;
+    display: block;
+    text-decoration: none;
+}
 .maincontent {
     border: 1px solid #ff0000;
-    height: 390px;
-    width: 69%;
+    height: auto;
+    width: 79%;
     margin-top: 5px;
     margin-left: 5px;
+    float: right;
 }
+ul.product_list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+ul.product_list li {
+    width: 18%; 
+    border: 1px dash #000;
+    margin: 5px;
+    float: left;
+    background: #f2f2f2;
+}
+ul.product_list li a  {
+    text-decoration: none;
+}
+
+ul.product_list img {
+    width: 100%;
+}
+p.title_product {
+    padding-left: 1vh;
+}
+p.price_product {
+    padding-left: 1vh;
+}
+
 .footer {
     border: 1px solid black;
     height: 150px;
     width: 100%;
     background: #00cc99;
+}
+.footer_copyright {
+    text-align: center;
+    color: #000;
 }
 .clear {
     clear: both;
