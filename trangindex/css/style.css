@@ -47,35 +47,6 @@ ul.list_menu li a {
     height: auto;
     width: 100%;
 }
-.sidebar {
-    border: 1px solid #000066;
-    height: 600px;
-    width: 20%;
-    margin-top: 5px;
-    margin-left: 5px;
-    float: left;
-}
-ul.list_sidebar {
-    padding: 0;
-    margin: 0;
-    list-style: 0;
-    list-style-type: none;
-    width: 60%;
-    margin: 0 auto;
-    line-height: 27px;
-}
-ul.list_sidebar li {
-    margin: 6px;
-    padding: 6px;
-}
-ul.list_sidebar li:hover {
-    background: #00ff80;
-}
-ul.list_sidebar li a {
-    text-align: left;
-    display: block;
-    text-decoration: none;
-}
 .maincontent {
     border: 1px solid #ff0000;
     height: auto;
