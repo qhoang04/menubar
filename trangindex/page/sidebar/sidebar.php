@@ -13,26 +13,7 @@
 ul li {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: none;
-}
-.listicon {
-    content: "";
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    margin: -3px 10px;
-    background: url("list-solid.svg") no-repeat;
-    color: #fff;
-}
-.moreicon {
-    content: "";
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    margin: -5px 20px;
-    background: url("greater-than-solid.svg") no-repeat;
-    color: #fff;
-}
-.navbar {
+}.navbar {
     font-size: 2.1vh;
     margin-top: 2%;
     background: rgba(0, 0, 0, 0.1);
@@ -79,6 +60,7 @@ ul {
     color: #fff;
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <?php include("function.php") ?>
 <script>
   function on_offMenu(event) {
@@ -92,7 +74,7 @@ ul {
 </script>
 <body>
   <div class="navbar" onclick="on_offMenu(event)">
-  <p class="dmsp"><i class="listicon"></i>Danh mục sản phẩm</p>
+  <p class="dmsp">    <i class="fa-solid fa-list fa-sm"></i> Danh mục sản phẩm</p>
     <?php
       echo buildMenu($conn); 
     ?>

@@ -11,7 +11,7 @@
       foreach ($menuItems as $menuItem) {
         if ($menuItem['level'] == $level) {
           if ($menuItem['more'] === "1") {
-            $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '<i class="moreicon"></i> </a>';
+            $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '   <i class="fa-solid fa-angle-right"></i> </a>';
           }
           else {
             $menuHTML .= '<li><a href="'. $menuItem['link']. '">'. $menuItem['menu_name']. '</a>';
@@ -20,7 +20,7 @@
           if (!empty($submenu)) {
             $menuHTML .= '<div class="submenu">'. $submenu. '</div>';
           }
-          $menuHTML .= '</li>';
+          $menuHTML .= '</li>'; 
         }
       }
     }

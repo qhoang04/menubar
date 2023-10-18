@@ -1,4 +1,4 @@
-<h4>Sản phẩm mới nhất</h4>
+<h4 style="text-align: center;">Sản phẩm mới nhất</h4>
 <ul class="product_list">
     <li>
         <a href="">
