@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <?php 
+        <?php
             include("page/header.php");
             include("page/menu.php");
             include("page/main.php");

@@ -47,10 +47,38 @@ ul.list_menu li a {
     height: auto;
     width: 100%;
 }
+.sidebar {
+    border: 1px solid #000066;
+    height: 390px;
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+}
+ul.list_sidebar {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    line-height: 27px;
+}
+ul.list_sidebar li:hover {
+    background: burlywood;
+}
+ul.list_sidebar li a {
+    text-decoration: none;
+    text-align: left;
+    color: #3333ff;
+    display: block;
+}
+ul.list_sidebar li {
+    margin: 7px;
+    padding: 5px;
+}
 .maincontent {
     border: 1px solid #ff0000;
     height: auto;
-    width: 79%;
+    width: 78%;
     margin-top: 5px;
     margin-left: 5px;
     float: right;
