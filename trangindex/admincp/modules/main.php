@@ -18,11 +18,11 @@
         else if ($tam == 'quanlydanhmucsanpham' && $query == 'sua') {
             include('modules/quanlydanhmucsp/sua.php');
         }
-        else if ($tam == 'quanlysanpham' && $query == 'them') {
+        else if ($tam == 'quanlysp' && $query == 'them') {
             include('modules/quanlysp/them.php');
             include('modules/quanlysp/lietke.php');
         }
-        else if ($tam == 'quanlysanpham' && $query == 'sua') {
+        else if ($tam == 'quanlysp' && $query == 'sua') {
             include('modules/quanlysp/sua.php');
         }
         else {

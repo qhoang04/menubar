@@ -23,7 +23,7 @@
     <tr>
         <td><?php echo $i ?></td>
         <td><?php echo $row['tensanpham']?></td>
-        <td><img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>"></td>
+        <td><img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
         <td><?php echo $row['giasp'] ?></td>
         <td><?php echo $row['soluong'] ?></td>
         <td><?php echo $row['masp'] ?></td>
@@ -35,7 +35,7 @@
             echo 'Ẩn';
         } ?></td>
         <td>
-            <a href="modules/quanlydanhmucsp/xuly.php?iddanhmuc=<?php echo $row['id_danhmuc'] ?>">Xóa</a> | <a href="?action=quanlydanhmucsanpham&query=sua&iddanhmuc=<?php echo $row['id_danhmuc'] ?>">Sửa</a>
+            <a href="modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham'] ?>">Xóa</a> | <a href="?action=quanlysp&query=sua&idsanpham=<?php echo $row['id_sanpham'] ?>">Sửa</a>
         </td>
     </tr>
     <?php }

@@ -12,13 +12,11 @@
     $tinhtrang = $_POST["tinhtrang"];
 
     
-
-
     if (isset($_POST["themsanpham"])) {
         $sql_them = "INSERT INTO sanpham (tensanpham, masp, giasp, soluong, hinhanh, tomtat, noidung, tinhtrang ) VALUE ('".$tensanpham."','".$masp."','".$giasp."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$tinhtrang."')";
         mysqli_query($mysqli, $sql_them);
         move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
-        header("Location:../../index.php?action=quanlysanpham&query=them");
+        header("Location:../../index.php?action=quanlysp&query=them");
     }
     else if (isset($_POST["suasanpham"])) {
         $sql_update = "UPDATE danhmuc SET tendanhmuc = '".$tenloaisp."', thutu = '".$thutu."' WHERE id_danhmuc= '$_GET[iddanhmuc]'";
@@ -26,9 +24,14 @@
         header("Location:../../index.php?action=quanlydanhmucsanpham&query=them");
     }
     else {
-        $id = $_GET['iddanhmuc'];
-        $sql_xoa =  "DELETE FROM danhmuc WHERE id_danhmuc ='".$id."'";
+        $id = $_GET['idsanpham'];
+        $sql = "SELECT * FROM sanpham WHERE id_sanpham ='$id' LIMIT 1 ";
+        $query = mysqli_query($mysqli, $sql);
+        while ($row = mysqli_fetch_array($query)) {
+            unlink('uploads/'.$row['hinhanh']);
+        }
+        $sql_xoa =  "DELETE FROM sanpham WHERE id_sanpham ='".$id."'";
         mysqli_query($mysqli, $sql_xoa);
-        header("Location:../../index.php?action=quanlydanhmucsanpham&query=them");
+        header("Location:../../index.php?action=quanlysp&query=them");
     }
 ?>
