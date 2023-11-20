@@ -10,16 +10,23 @@
     $tomtat = $_POST["tomtat"];
     $noidung = $_POST["noidung"];
     $tinhtrang = $_POST["tinhtrang"];
+    $danhmuc = $_POST["danhmuc"];
 
     
     if (isset($_POST["themsanpham"])) {
-        $sql_them = "INSERT INTO sanpham (tensanpham, masp, giasp, soluong, hinhanh, tomtat, noidung, tinhtrang ) VALUE ('".$tensanpham."','".$masp."','".$giasp."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$tinhtrang."')";
+        $sql_them = "INSERT INTO sanpham (tensanpham, masp, giasp, soluong, hinhanh, tomtat, noidung, tinhtrang, id_danhmuc ) VALUE ('".$tensanpham."','".$masp."','".$giasp."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$tinhtrang."','".$danhmuc."')";
         mysqli_query($mysqli, $sql_them);
         move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
         header("Location:../../index.php?action=quanlysp&query=them");
     }
     else if (isset($_POST["suasanpham"])) {
-        if ($_POST['hinhanh']) {
+        if ($hinhanh != '') {
+            move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
+            $sql = "SELECT * FROM sanpham WHERE id_sanpham ='$_GET[idsanpham]' LIMIT 1 ";
+            $query = mysqli_query($mysqli, $sql);
+            while ($row = mysqli_fetch_array($query)) {
+                unlink('uploads/'.$row['hinhanh']);
+            }
             $sql_update = "UPDATE sanpham SET tensanpham = '".$tensanpham."', masp = '".$masp."', giasp = '".$giasp."', soluong = '".$soluong."', hinhanh = '".$hinhanh."', tomtat = '".$tomtat."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."' WHERE id_sanpham= '$_GET[idsanpham]'";
         }
         else {
