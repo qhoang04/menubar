@@ -19,9 +19,14 @@
         header("Location:../../index.php?action=quanlysp&query=them");
     }
     else if (isset($_POST["suasanpham"])) {
-        $sql_update = "UPDATE danhmuc SET tendanhmuc = '".$tenloaisp."', thutu = '".$thutu."' WHERE id_danhmuc= '$_GET[iddanhmuc]'";
+        if ($_POST['hinhanh']) {
+            $sql_update = "UPDATE sanpham SET tensanpham = '".$tensanpham."', masp = '".$masp."', giasp = '".$giasp."', soluong = '".$soluong."', hinhanh = '".$hinhanh."', tomtat = '".$tomtat."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."' WHERE id_sanpham= '$_GET[idsanpham]'";
+        }
+        else {
+            $sql_update = "UPDATE sanpham SET tensanpham = '".$tensanpham."', masp = '".$masp."', giasp = '".$giasp."', soluong = '".$soluong."', tomtat = '".$tomtat."', noidung = '".$noidung."', tinhtrang = '".$tinhtrang."' WHERE id_sanpham= '$_GET[idsanpham]'";
+        }
         mysqli_query($mysqli, $sql_update);
-        header("Location:../../index.php?action=quanlydanhmucsanpham&query=them");
+        header("Location:../../index.php?action=quanlysp&query=them");
     }
     else {
         $id = $_GET['idsanpham'];
