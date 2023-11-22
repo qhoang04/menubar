@@ -9,14 +9,14 @@
     <div class="hinhanh_sp">
         <img width="100%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh']?>">
     </div>
-    <form method="POST" action="#"> 
+    <form method="POST" action="page/main/themgiohang.php?idsanpham=<?php echo $row_chitiet['id_sanpham'] ?>"> 
         <div class="chitiet_sp">
             <h3 style="margin: 0;">Tên sản phẩm: <?php echo $row_chitiet['tensanpham'] ?></h3>
             <p>Mã sản phẩm: <?php echo $row_chitiet['masp'] ?></p>
             <p>Giá sản phẩm: <?php echo number_format($row_chitiet['giasp'],0,',','.') ?> vnd</p>
             <p>Số lượng sản phẩm: <?php echo ($row_chitiet['giasp']) ?></p>
             <p>Danh mục sản phẩm: <?php echo $row_chitiet["tendanhmuc"]?></p>
-            <p><input type="submit" class="themgiohang_btn" value="Thêm giỏ hàng"></p>
+            <p><input type="submit" class="themgiohang_btn" name="themgiohang" value="Thêm giỏ hàng"></p>
         </div>
     </form>
 </div>
