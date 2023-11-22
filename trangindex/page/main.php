@@ -19,6 +19,9 @@
             else if ($tam == 'lienhe') {
                 include("main/lienhe.php");
             }
+            else if ($tam == 'sanpham') {
+                include("main/sanpham.php");
+            }
             else {
                 include("main/index.php");
             }

@@ -4,9 +4,31 @@ body {
 }
 .wrapper {
     border: 1px solid #000;
-    height: 950px;
+    height: auto;
     width: 90%;
     margin: 0 auto;
+}
+.wrapper_chitiet {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+}
+.hinhanh_sp {
+    float: left;
+    width: 30%;
+}
+.chitiet_sp {
+    float: left;
+    width: 48%;
+    margin: 0 10px;
+}
+input.themgiohang_btn {
+    border: none;
+    background: brown;
+    color: #fff;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
 }
 .header {
     background-image: url(../images/dalana-decor-banner-1.jpg);
@@ -76,7 +98,6 @@ ul.list_sidebar li {
     padding: 5px;
 }
 .maincontent {
-    border: 1px solid #ff0000;
     height: auto;
     width: 78%;
     margin-top: 5px;
@@ -89,12 +110,16 @@ ul.product_list {
     list-style: none;
     width: 100%;
 }
+ul.product_list li img {
+    height: 190px;
+    width: 100%;
+}
 ul.product_list li {
     width: 18%; 
-    border: 1px dash #000;
+    border: 1px solid #ddd;
     margin: 5px;
     float: left;
-    background: #f2f2f2;
+    height: 300px;
 }
 ul.product_list li a  {
     text-decoration: none;
@@ -105,9 +130,17 @@ ul.product_list img {
 }
 p.title_product {
     padding-left: 1vh;
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
 }
 p.price_product {
     padding-left: 1vh;
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .footer {
